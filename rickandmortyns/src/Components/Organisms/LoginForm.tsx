@@ -18,11 +18,11 @@ const initialValues: LoginCredentials = {
 
 const validationSchema = Yup.object({
   email: Yup.string()
-    .email("Ungültige E-Mail-Adresse")
-    .required("E-Mail ist erforderlich"),
+    .email("Invalid email address")
+    .required("Email is required"),
   password: Yup.string()
-    .min(6, "Passwort muss mindestens 6 Zeichen haben")
-    .required("Passwort ist erforderlich"),
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
 });
 
 function LoginForm({ onSubmit, errorMessage }: LoginFormProps) {
@@ -38,11 +38,11 @@ function LoginForm({ onSubmit, errorMessage }: LoginFormProps) {
       {({ isSubmitting }) => (
         <Form>
           <Stack spacing={2}>
-            <FormField label="E-Mail" name="email" type="email" />
-            <FormField label="Passwort" name="password" type="password" />
+            <FormField label="Email" name="email" type="email" />
+            <FormField label="Password" name="password" type="password" />
             {errorMessage ? <Alert severity="error">{errorMessage}</Alert> : null}
             <Button type="submit" disabled={isSubmitting}>
-              Anmelden
+              Sign in
             </Button>
           </Stack>
         </Form>

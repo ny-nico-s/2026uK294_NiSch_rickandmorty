@@ -10,6 +10,7 @@ type FormFieldProps = {
 function FormField({ label, name, type = "text" }: FormFieldProps) {
   const [field, meta] = useField(name);
   const showError = meta.touched && Boolean(meta.error);
+  const shouldShrink = type === "date" || type === "datetime-local";
 
   return (
     <TextInput
@@ -18,6 +19,7 @@ function FormField({ label, name, type = "text" }: FormFieldProps) {
       type={type}
       error={showError}
       helperText={showError ? meta.error : " "}
+      slotProps={shouldShrink ? { inputLabel: { shrink: true } } : undefined}
       {...field}
     />
   );

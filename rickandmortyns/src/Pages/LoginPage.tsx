@@ -21,10 +21,10 @@ function LoginPage() {
       navigate("/");
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
-        setErrorMessage("Login fehlgeschlagen. E-Mail oder Passwort falsch.");
+        setErrorMessage("Login failed. Wrong email or password.");
       } else {
         setErrorMessage(
-          "Server nicht erreichbar. Läuft das Backend auf Port 3030?",
+          "Server not reachable. Is the backend running on port 3030?",
         );
       }
     }

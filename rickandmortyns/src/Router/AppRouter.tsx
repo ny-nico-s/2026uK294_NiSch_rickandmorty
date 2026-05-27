@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import CharacterCreatePage from "../Pages/CharacterCreatePage";
 import CharacterDetailPage from "../Pages/CharacterDetailPage";
 import CharacterEditPage from "../Pages/CharacterEditPage";
 import CharacterListPage from "../Pages/CharacterListPage";
@@ -15,6 +16,14 @@ function AppRouter() {
           element={
             <ProtectedRoute>
               <CharacterListPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/characters/new"
+          element={
+            <ProtectedRoute>
+              <CharacterCreatePage />
             </ProtectedRoute>
           }
         />

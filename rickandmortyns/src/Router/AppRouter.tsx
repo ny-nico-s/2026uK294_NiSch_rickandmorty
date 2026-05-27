@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import CharacterDetailPage from "../Pages/CharacterDetailPage";
+import CharacterEditPage from "../Pages/CharacterEditPage";
 import CharacterListPage from "../Pages/CharacterListPage";
 import LoginPage from "../Pages/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
@@ -22,6 +23,14 @@ function AppRouter() {
           element={
             <ProtectedRoute>
               <CharacterDetailPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/characters/:id/edit"
+          element={
+            <ProtectedRoute>
+              <CharacterEditPage />
             </ProtectedRoute>
           }
         />

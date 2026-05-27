@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../Components/Organisms/LoginForm";
@@ -18,8 +19,14 @@ function LoginPage() {
       setErrorMessage("");
       await login(credentials);
       navigate("/");
-    } catch {
-      setErrorMessage("Login fehlgeschlagen. E-Mail oder Passwort falsch.");
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        setErrorMessage("Login fehlgeschlagen. E-Mail oder Passwort falsch.");
+      } else {
+        setErrorMessage(
+          "Server nicht erreichbar. Läuft das Backend auf Port 3030?",
+        );
+      }
     }
   };
 

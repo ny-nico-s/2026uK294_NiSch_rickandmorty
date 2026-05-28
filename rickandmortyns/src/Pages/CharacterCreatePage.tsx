@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CharacterForm from "../Components/Organisms/CharacterForm";
 import type { CharacterFormValues } from "../Components/Organisms/CharacterForm";
-import PageLayout from "../Components/Templates/PageLayout";
+import PageLayout from "../Components/Organisms/PageLayout";
 import { createCharacter } from "../Services/RickAndMortyService";
 import { toDateInput, toIso } from "../Utils/Date";
 

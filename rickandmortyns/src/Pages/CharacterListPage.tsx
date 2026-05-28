@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/Atoms/Button";
 import CharacterList from "../Components/Organisms/CharacterList";
-import PageLayout from "../Components/Templates/PageLayout";
+import PageLayout from "../Components/Organisms/PageLayout";
 import { getCharacters } from "../Services/RickAndMortyService";
 import type { Character } from "../Types/Character";
 

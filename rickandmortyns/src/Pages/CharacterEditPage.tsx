@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CharacterForm from "../Components/Organisms/CharacterForm";
 import type { CharacterFormValues } from "../Components/Organisms/CharacterForm";
-import PageLayout from "../Components/Templates/PageLayout";
+import PageLayout from "../Components/Organisms/PageLayout";
 import {
   getCharacterById,
   updateCharacter,

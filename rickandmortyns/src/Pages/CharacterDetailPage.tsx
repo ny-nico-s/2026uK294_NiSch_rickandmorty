@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../Components/Atoms/Button";
-import PageLayout from "../Components/Templates/PageLayout";
+import PageLayout from "../Components/Organisms/PageLayout";
 import {
   deleteCharacter,
   getCharacterById,
